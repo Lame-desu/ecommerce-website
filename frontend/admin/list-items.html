@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - List Products</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/admin-styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation (reuse from index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Admin Panel</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="add-items.html">Add Items</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list-items.html">List Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="orders.html">Orders</a>
+            </li>
+          </ul>
+        </div>
+        <button class="btn btn-danger btn-sm" id="logout-btn">Logout</button>
+      </div>
+    </nav>
+
+    <!-- List Products Section -->
+    <div class="container mt-5">
+      <h2 class="mb-4">Manage Products</h2>
+      <div
+        id="loading-spinner"
+        class="justify-content-center align-items-center mt-4"
+        style="display: none"
+      >
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div id="product-grid" class="row g-4">
+        <!-- Product cards will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <!-- Modal for Product Details -->
+    <div
+      class="modal fade"
+      id="productDetailsModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Product Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="product-details-content"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Updating Product Details -->
+    <div
+      class="modal fade"
+      id="editProductModal"
+      tabindex="-1"
+      aria-labelledby="editProductModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="edit-product-form">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="edit-title" class="form-label">Product Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-title"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-description" class="form-label"
+                  >Description</label
+                >
+                <textarea
+                  class="form-control"
+                  id="edit-description"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="edit-price" class="form-label">Price ($)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="edit-price"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-image" class="form-label">Image URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="edit-image"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-category" class="form-label">Category</label>
+                <select class="form-select" id="edit-category" required>
+                  <option value="electronics">Electronics</option>
+                  <option value="jewelery">Jewelery</option>
+                  <option value="men's clothing">Men's Clothing</option>
+                  <option value="women's clothing">Women's Clothing</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/list-items.js" defer></script>
+  </body>
+</html>

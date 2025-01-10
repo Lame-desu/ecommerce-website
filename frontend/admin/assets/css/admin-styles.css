@@ -1,0 +1,51 @@
+.product-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.product-card img {
+  height: 150px;
+  object-fit: contain;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.order-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.order-card .order-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+.product-list {
+  list-style: none;
+  padding: 0;
+}
+.product-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.product-list li:last-child {
+  border-bottom: none;
+}
+.status-badge {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.status-received {
+  background-color: #28a745;
+  color: white;
+}
+.status-pending {
+  background-color: #ffc107;
+  color: black;
+}

@@ -1,0 +1,51 @@
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.banner {
+  height: 300px;
+  background: url("../images/team-members/team-member-1.jpg") no-repeat center
+    center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.unique-properties {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+.unique-properties i {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.contact-banner {
+  height: 400px;
+  background: url("../images/team-members/team-member-2.jpg") no-repeat center
+    center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.contact-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form .form-control:focus {
+  box-shadow: none;
+  border-color: #007bff;
+}
